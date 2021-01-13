@@ -81,9 +81,8 @@ class Reservation extends Component {
     let content;
 
     if (reservation) {
-      const firstItem = date ? true : false;
       if (_.isFunction(this.props.renderItem)) {
-        content = this.props.renderItem(reservation, firstItem);
+        content = this.props.renderItem(reservation, date);
       }
     } else if (_.isFunction(this.props.renderEmptyDate)) {
       content = this.props.renderEmptyDate(date);
